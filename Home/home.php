@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION["username"]))
 {
-    if((time() - $_SESSION['last_time']) >15)
+    if((time() - $_SESSION['last_time']) >60)
 
 {
   
@@ -47,7 +47,8 @@ if(isset($_SESSION["username"]))
       </div>
       </div>
       <div class="clock">
-      <iframe src="https://free.timeanddate.com/clock/i8ptu7gw/n54/fn15/fs30/fcfff/tc22d/ftb/bls0/brs0/bts4/btc00b" frameborder="0" width="183" height="41"></iframe>
+      <iframe src="https://free.timeanddate.com/countdown/i8pv3n5r/n1896/cf111/cm0/cu4/ct0/cs0/ca0/cr1/ss0/cac000/cpc000/pc66c/tc66c/fs100/szw320/szh135/tatTime%20left%20to%20Event%20in/tac000/tptTime%20since%20Event%20started%20in/tpc000/mac000/mpc000/iso2023-02-12T08:43:00" allowtransparency="true" frameborder="0" width="320" height="135"></iframe>
+
 
       </div>
     

@@ -10,16 +10,11 @@ elseif(empty($_POST['pass'])){
   header("Location:Login.php ? error=password is required");
 }
 else{
-  $sql = "select * from users where user=:name and password = :pass";
+  $name      =($_POST['name']);
+  $pass   =($_POST['pass']);
+  $sql = "select * from users where user=? and password = ?";
   $statement = $conn->prepare($sql);
-  $statement->execute(
-    array(
-      'name' =>$_POST["name"],
-      'pass' =>$_POST['pass']
-
-
-    )
-  );
+  $statement->execute([$name,$pass]);
   $count = $statement->rowCount();
 
   if($count> 0){
@@ -43,7 +38,7 @@ else{
   //         return $data;
   //     }
   //     $name    = validate($_POST['name']);
-  //     $password  =validate($_POST['pass']);
+  //    
 
   // if(empty($name && $password)){
   //   header("Location:Login.php? error=user name and password is requird");

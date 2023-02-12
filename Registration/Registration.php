@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     
     <title>Login & Signup Form</title>
-    <link rel="stylesheet" href="register.css" />
+    <link rel="stylesheet" href="Register.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
 
@@ -40,7 +41,8 @@
            {echo $_SESSION['user'] ;
            } ?>"  />
           <input type="Password" placeholder="Password" name="pass"  />
-          <input type="password" placeholder="Confirm password" required name="confirm"/>
+        <input type="password" placeholder="Confirm password" required name="confirm"/>
+        <div class="g-recaptcha" data-sitekey="6Lc5EXMkAAAAACE-MozggecPlNF4yseqsG6a_0so"></div>
           <input type="submit"name="create"  value="Signup" />
         </form>
       </div>
