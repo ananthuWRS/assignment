@@ -14,6 +14,7 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="cover.css">
+  <script type="text/javascript" src="arun.js"></script>
 </head>
 <body>
 
@@ -21,21 +22,12 @@ session_start();
   
     <div class="login form">
       <header>Login</header>
-<?php if(isset($_GET['error'])){?>
-  <p class="error"><?php echo $_GET['error'];?> </p>
-  <?php
-  
-}
-  ?>
-         <?php if(isset($_GET['sucess'])){?>
-  <p class="sucess"><?php echo $_GET['sucess'];?> </p>
-  <?php
-  
-}
-?>
-      <form action="connect.php" method="POST">
+
+  <form  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="form2" onsubmit="return  validate()">
       <input type="text" placeholder="Enter the username" name="name" >
+      <span id="username1" class="danger"> </span>  
         <input type="password" placeholder="Enter your password" name="pass" >
+        <span id="password1" class="danger"> </span>  
         <a href="#">Forgot password?</a>
         <input type="submit" class="button"  name="create"  value="Log In" />
       </form>
